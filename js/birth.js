@@ -31,7 +31,7 @@ addBtn.addEventListener('click', function (e) {
                 createElem.innerText ='Saturday';
             break;
     }
-    getDayBirth.appendChild(createElem);
+    getDayBirth.innerHTML = createElem.innerText;
     addDate.value =''; 
         
 });
