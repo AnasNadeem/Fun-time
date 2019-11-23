@@ -7,6 +7,22 @@ let addRandomNumber = document.getElementById('addRandomNumber');
       
     });
 
+let addRandomCoin = document.getElementById('addRandomCoin');
+      addRandomCoin.addEventListener('click', function(){
+      let random = document.getElementById('random');
+      let c;
+      c = Math.floor(1 + 2*Math.random());
+        switch(c){
+            case 1:
+              random.innerHTML = "HEADS";
+              break;
+            case 2:
+              random.innerHTML = "TAILS";
+              break;
+        }
+    });
+
+
 let createRandom = document.getElementById('createRandomNumber');
     createRandom.addEventListener('click', func1);
     function func1(){
