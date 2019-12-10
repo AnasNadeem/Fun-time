@@ -5,6 +5,7 @@ addBtn.addEventListener('click', function (e) {
     let getUserDate = new Date(addDate.value);
     let getDayBirth = document.getElementById('day');
     let createElem = document.createElement('p');
+    if(addDate.value){
     let a;
     a = getUserDate.getDay();
     switch (a) {
@@ -31,7 +32,17 @@ addBtn.addEventListener('click', function (e) {
                 createElem.innerText ='Saturday';
             break;
     }
-    getDayBirth.innerHTML = createElem.innerText;
+    let b;
+    b = getUserDate.getTime();
+    let todaysTotalTime = new Date();
+    let timeMillisec = todaysTotalTime.getTime();
+    let calcTotDay = Math.floor((timeMillisec - b)/(1000*60*60*24));
+    let resultCalcTotDay = "Total Day on earth: "+ calcTotDay;
+    let calcTotHours =  Math.floor((timeMillisec - b)/(1000*60*60));
+    let resultCalcTotHours = "Also Total Hours: " + calcTotHours;
+    getDayBirth.innerHTML =  "First cry: " + createElem.innerText+ "<br>" + resultCalcTotDay + "<br>" + resultCalcTotHours; 
     addDate.value =''; 
-        
+    }else{
+       getDayBirth.innerText = "Please write your date of birth to know the details.";
+    }  
 });
