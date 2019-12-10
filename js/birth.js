@@ -6,6 +6,7 @@ addBtn.addEventListener('click', function (e) {
     let getDayBirth = document.getElementById('day');
     let createElem = document.createElement('p');
     if(addDate.value){
+		// GETTING THE DAY USER BORN
     let a;
     a = getUserDate.getDay();
     switch (a) {
@@ -32,15 +33,23 @@ addBtn.addEventListener('click', function (e) {
                 createElem.innerText ='Saturday';
             break;
     }
+	// GETTIN THE TIME
     let b;
     b = getUserDate.getTime();
+	// GETTING THE CURRENT DATE  
     let todaysTotalTime = new Date();
+	// GETTING THE USER BIRTH TIME IN MILLISECONDS
     let timeMillisec = todaysTotalTime.getTime();
+	// CALCULATING THE TOTAL DAYS OF USER LIFE
     let calcTotDay = Math.floor((timeMillisec - b)/(1000*60*60*24));
     let resultCalcTotDay = "Total Day on earth: "+ calcTotDay;
+	// CALCULATING THE TOTAL HOURS OF USER LIFE
     let calcTotHours =  Math.floor((timeMillisec - b)/(1000*60*60));
     let resultCalcTotHours = "Also Total Hours: " + calcTotHours;
-    getDayBirth.innerHTML =  "First cry: " + createElem.innerText+ "<br>" + resultCalcTotDay + "<br>" + resultCalcTotHours; 
+	// CALCULATING THE TOTAL HOURS OF USER LIFE
+	let calcTotMin = Math.floor((timeMillisec - b)/(1000*60));
+	let resultCalcTotMin = " Total Minutes: " + calcTotMin;
+    getDayBirth.innerHTML =  "First cry: " + createElem.innerText+ "<br>" + resultCalcTotDay + "<br>" + resultCalcTotHours + "<br>" + resultCalcTotMin; 
     addDate.value =''; 
     }else{
        getDayBirth.innerText = "Please write your date of birth to know the details.";
