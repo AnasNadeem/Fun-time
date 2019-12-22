@@ -33,7 +33,7 @@ addBtn.addEventListener('click', function (e) {
                 createElem.innerText ='Saturday';
             break;
     }
-	// GETTIN THE TIME
+	// GETTING THE TIME
     let b;
     b = getUserDate.getTime();
 	// GETTING THE CURRENT DATE  

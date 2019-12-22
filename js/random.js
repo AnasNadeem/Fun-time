@@ -20,8 +20,8 @@ let addRandomCoin = document.getElementById('addRandomCoin');
               random.innerHTML = "TAILS";
               break;
         }
+       console.log(c);
     });
-
 
 let createRandom = document.getElementById('createRandomNumber');
     createRandom.addEventListener('click', func1);
